@@ -1,0 +1,167 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    background-color: rgb(208, 111, 111);
+}
+#header{
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    text-align: justify;
+    word-spacing: 5px;
+}
+.search input[type=search]{
+    padding: 6px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.search button{
+    float: right;
+    padding: 6px 10px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.search button:hover{
+    background-color:#ccc;
+}
+
+.box{
+    width: 30vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3 rem rgba(0, 0, 0, 0.2);
+    background: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0 ,0 , 0);
+    min-width: 25rem;
+    min-height: 35rem;
+}
+
+.wave{
+    opacity: 0.3;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 45%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+
+.-three{
+    animation: drift 5000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.1;
+}
+
+.-two{
+    animation: drift 7000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.2;
+}
+
+.box:after{
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0,0,0);
+}
+
+@keyframes drift {
+    from{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+#weathericon{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    animation: fas 3s linear infinite alternate;
+}
+.temp {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.PHV{
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: black;
+}
+#date{
+    margin-top: 0.5rem;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 5;
+}
+.fa-street-view{
+    animation: rotates 2s linear infinite alternate;
+}
+
+@keyframes rotates {
+    from{
+        transform: translateX(-0.5rem);
+    }
+    to{
+        transform: translateX(0.1rem);
+    }
+}
+
+@keyframes fas {
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lnag="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>WeatherApp</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1>Enter City in the Search Box</h1><br>
+        </div>
+        
+        <form action="/" method="post" class="search">
+            <input type="search" placeholder="Search.." name="city" required>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <br>
+        
+        <%if(city !== null){ %>
+            <div class="box">
+                <div class="wave"></div>
+                <div class="wave -two"></div>
+                <div class="wave -three"></div>
+
+                <%if(icon !== null){ %>
+                    <div id="weathericon">
+                        <img src="https://openweathermap.org/img/wn/<%= icon %>@4x.png"> 
+                    </div>
+                <% } %>
+
+                <div class="info">
+                    <%if(description !== null){ %>
+                        <h3 class="PHV" style="text-transform: uppercase;"><%= description %></h3>
+                    <% } %>
+
+                    <%if(city !== null){ %>
+                        <h2 class="location"><i class="fa-solid fa-street-view"></i><%= city %></h2>
+                    <% } %>
+
+                    <p id="date"></p>
+                    
+                    <%if(temp !== null){ %>
+                        <h2 class="temp" >Temperature: <%= temp %>°C</h2>
+                    <% } %>
+
+                    <%if(pressure !== null){ %>
+                        <h3 class="PHV" >Pressure: <%= pressure %> N.m-2</h3>
+                    <% } %>
+
+                    <%if(humidity !== null){ %>
+                        <h3 class="PHV" >Humidity: <%= humidity %> g.m-2</h3>
+                    <% } %>
+
+                    <%if(visibility !== null){ %>
+                        <h3 class="PHV">Visibility: <%= visibility %> meters</h3>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+        <script src="/js/index.js"></script>
+    </body>
+</html>
+ 
