@@ -75,8 +75,7 @@ app.use((req,res,next) => {
     res.status(404).render('404', {pageTitle: 'Page Not Found'});
 });
   
-app.listen(8000, function () {
-    console.log("Weather app listening on port 8000!");
+const Port = process.env.PORT || 8000;
+app.listen(Port, function () {
+    console.log(`Weather app listening on ${port}!`);
 });
-
-
