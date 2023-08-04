@@ -27,7 +27,6 @@ app.post('/',async (req, res) => {
     const city = req.body.city;
     const KEY = process.env.APIKEY;
     const url = `${process.env.APP_API}?q=${city}&units=metric&appid=${KEY}`;
-    console.log(city, KEY, url);
     
     try{
         fetch(url)
@@ -61,7 +60,6 @@ app.post('/',async (req, res) => {
         });
     }
     catch(error){
-        console.log(error);
         res.render('index', {
             city: 'something went wrong',
             description:null,
