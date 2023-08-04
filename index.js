@@ -77,5 +77,5 @@ app.use((req,res,next) => {
   
 const Port = process.env.PORT || 8000;
 app.listen(Port, function () {
-    console.log(`Weather app listening on ${port}!`);
+    console.log(`Weather app listening on ${Port}!`);
 });
