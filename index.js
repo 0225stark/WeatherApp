@@ -29,7 +29,7 @@ app.post('/',async (req, res) => {
     const url = `${process.env.APP_API}?q=${city}&units=metric&appid=${KEY}`;
 
     try{
-        await fetch(url)
+        fetch(url)
         .then(res => res.json())
         .then((data) => {
             if(data.message === 'city not found'){
