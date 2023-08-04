@@ -58,7 +58,7 @@ app.post('/',async (req, res) => {
         });
     }
     catch(error){
-        res.index('index', {
+        res.render('index', {
             city: 'something went wrong',
             description:null,
             icon: null,
