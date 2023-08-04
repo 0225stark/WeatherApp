@@ -25,7 +25,8 @@ app.get("/", function (req, res) {
 
 app.post('/',async (req, res) => {
     const city = req.body.city;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=fda8d6b6dfc94d19780b6b9b828e5f61`;
+    const KEY = process.env.APIKEY;
+    const url = `${process.env.APP_API}?q=${city}&units=metric&appid=${KEY}`;
 
     try{
         await fetch(url)
