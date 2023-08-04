@@ -27,11 +27,13 @@ app.post('/',async (req, res) => {
     const city = req.body.city;
     const KEY = process.env.APIKEY;
     const url = `${process.env.APP_API}?q=${city}&units=metric&appid=${KEY}`;
-
+    console.log(city, KEY, url);
+    
     try{
         fetch(url)
         .then(res => res.json())
         .then((data) => {
+            console.log(data);
             if(data.message === 'city not found'){
                 res.render('index', {
                     city: data.message,
